@@ -1,0 +1,144 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('img/fundo-loja.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Overlay escuro para destacar conteúdo */
+  .background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+  }
+  
+  /* Watermark MGV Imports no fundo */
+  .watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    color: rgba(255, 255, 255, 0.12);
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: 'Arial Black', Arial, sans-serif;
+    z-index: 2;
+  }
+  
+  /* Container do formulário */
+  .login-wrapper {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 420px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    text-align: center;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+  /* Animação fadeInUp */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .login-form h2 {
+    margin-bottom: 2rem;
+    color: #004080;
+    font-weight: 700;
+    font-size: 2.2rem;
+  }
+  
+  /* Inputs */
+  .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.05rem;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #004080;
+    box-shadow: 0 0 8px #004080aa;
+    outline: none;
+  }
+  
+  /* Botão */
+  button {
+    width: 100%;
+    padding: 1.15rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: #004080;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #002e5c;
+    transform: scale(1.05);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .login-wrapper {
+      padding: 2rem 2rem;
+      max-width: 90%;
+    }
+  
+    .watermark {
+      font-size: 20vw;
+      letter-spacing: 0.15em;
+    }
+  }
+  

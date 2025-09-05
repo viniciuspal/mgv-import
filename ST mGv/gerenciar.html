@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Funcionários - MGV Imports</title>
+  <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MGV Imports - Funcionários</h1>
+      <button id="addEmployeeBtn">Adicionar Funcionário</button>
+    </header>
+    <section class="employee-list">
+      <h2>Lista de Funcionários</h2>
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Funcionários serão listados aqui -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Modal para Adicionar/Editar Funcionário -->
+  <div id="employeeModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <h2 id="modalTitle">Adicionar Funcionário</h2>
+      <form id="employeeForm">
+        <label for="employeeName">Nome:</label>
+        <input type="text" id="employeeName" name="employeeName" required>
+        <label for="employeeRole">Cargo:</label>
+        <input type="text" id="employeeRole" name="employeeRole" required>
+        <button type="submit" id="submitBtn">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

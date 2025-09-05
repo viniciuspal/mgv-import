@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MGV Imports - Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>MGV Imports</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="filterProducts('bermudas')">bermudas</a></li>
+                <li><a href="#" onclick="filterProducts('calca')">Calças</a></li>
+                <li><a href="#" onclick="filterProducts('camiseta')">Camisetas</a></li>
+                <li><a href="#" onclick="filterProducts('cueca')">Cuecas</a></li>
+                <li><a href="#" onclick="showAllProducts()">Todos</a></li>
+                <li><a href="#" onclick="viewCart()">Carrinho (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Pesquisar produtos..." onkeyup="searchProducts()" />
+        </div>
+    </header>
+
+    <main>
+        <h2>Produtos</h2>
+        <div id="productList" class="product-list">
+            <!-- Produtos carregados via JS -->
+        </div>
+    </main>
+
+    <!-- Modal do Carrinho -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <h3>Carrinho de Compras</h3>
+            <ul id="cartItems"></ul>
+            <p>Total: R$ <span id="totalAmount">0.00</span></p>
+            <button onclick="finalizePurchase()">Finalizar Compra</button>
+            <button onclick="closeCart()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
